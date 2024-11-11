@@ -13,7 +13,7 @@ import TaskRouter from './Routes/Tasks.js';
 dotenv.config()
 const app=express()
 const corsOptions = {
-    origin: 'https://ems-frontend.onrender.com', 
+    origin: 'https://ems-frontend-zcdk.onrender.com', 
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
     allowedHeaders: ['Content-Type', 'Authorization', 'authorization'], 
     credentials: true, 
