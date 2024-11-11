@@ -28,6 +28,6 @@ app.use('/api/leaves',leavesRouter)
 app.use('/api/board',boardRouter)
 app.use('/api/tasks',TaskRouter)
 app.listen((process.env.PORT),async()=>{
-    await mongoose.connect(process.env.URI)
+    await mongoose.connect(process.env.URI,{dbName:'EMS'})
     console.log(`server started on port ${process.env.PORT}`)
 })
