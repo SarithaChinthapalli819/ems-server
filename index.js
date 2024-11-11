@@ -1,6 +1,6 @@
 import express from 'express'
 import cors from 'cors'
-import connectDB from './Database/db.js'
+import connectDB from './Database/Db.js'
 import dotenv from 'dotenv';
 import router from './Routes/Auth.js';
 import datarouter from './Routes/Users.js';

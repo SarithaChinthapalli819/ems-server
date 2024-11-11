@@ -1,8 +1,9 @@
 import mongoose from "mongoose";
-
+import dotenv from 'dotenv';
+dotenv.config()
 const connectDB = async ()=>{
     try{
-        await mongoose.connect('mongodb://localhost:27017/EMS')
+        await mongoose.connect(process.env.URI)
         console.log('DB connected...')
     }
     catch(err){
