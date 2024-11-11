@@ -1,6 +1,6 @@
 import express from 'express'
 import cors from 'cors'
-import connectDB from './Database/Db.js'
+import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import router from './Routes/Auth.js';
 import datarouter from './Routes/Users.js';
@@ -24,7 +24,7 @@ app.use('/api/teams',teamrouter)
 app.use('/api/leaves',leavesRouter)
 app.use('/api/board',boardRouter)
 app.use('/api/tasks',TaskRouter)
-app.listen((process.env.PORT),()=>{
-    connectDB()
+app.listen((process.env.PORT),async()=>{
+    await mongoose.connect('mongodb://localhost:27017/EMS')
     console.log(`server started on port ${process.env.PORT}`)
 })
