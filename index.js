@@ -13,7 +13,7 @@ import TaskRouter from './Routes/Tasks.js';
 dotenv.config()
 const app=express()
 app.use(cors({
-    origin:["https://ems-frontend-jkr7.vercel.app"],
+    origin:["https://ems-frontend-air2-pdxeney9x-chinthapalli-sarithas-projects.vercel.app"],
     methods:["GET","POST","PUT","DELETE"],
     credentials:true
 }))
