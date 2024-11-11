@@ -15,7 +15,7 @@ const app=express()
 const corsOptions = {
     origin: 'https://ems-frontend-air2.vercel.app', // Frontend URL
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allow these methods
-    allowedHeaders: ['Content-Type', 'Authorization'], // Allow these headers
+    allowedHeaders: ['Content-Type', 'Authorization', 'authorization'], 
     credentials: true, // Enable credentials (cookies, authorization headers)
   };
 app.options('*', cors(corsOptions));
