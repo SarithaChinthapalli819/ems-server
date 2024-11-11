@@ -22,4 +22,18 @@ datarouter.get('/:isActive',middleware,async (req,res)=>{
     })
     return res.status(200).json({success:true,users,message:"users data fetched successfully"})
 })
+
+datarouter.get('activeUsers/:isActive',async (req,res)=>{
+    const {isActive} =req.params;
+    const filter={}
+    if(isActive == 1){
+        filter.inactiveDateTime =null
+    }
+    else if(isActive == 0 ){
+        filter.inactiveDateTime = {$ne :null}
+    }
+    
+    const users=await User.find(filter)
+    return res.status(200).json({success:true,users,message:"users data fetched successfully"})
+})
 export default datarouter;
