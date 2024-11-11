@@ -12,12 +12,13 @@ import TaskRouter from './Routes/Tasks.js';
 
 dotenv.config()
 const app=express()
-app.use(cors({
-    origin:["https://ems-frontend-air2.vercel.app"],
-    methods:["GET","POST","PUT","DELETE"],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials:true
-}))
+const corsOptions = {
+    origin: 'https://ems-frontend-air2.vercel.app', // Frontend URL
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allow these methods
+    allowedHeaders: ['Content-Type', 'Authorization'], // Allow these headers
+    credentials: true, // Enable credentials (cookies, authorization headers)
+  };
+app.options('*', cors(corsOptions));
 app.use(express.json())
 app.use('/api/auth',router)
 app.use('/api/user',datarouter)
