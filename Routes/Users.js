@@ -16,6 +16,7 @@ datarouter.get('/:isActive',middleware,async (req,res)=>{
     if(req.user.role != 'Admin'){
         filter._id=req.user.id
     }
+    
     const users=await User.find(filter).populate({
         path:'team',
         select:'name'
