@@ -21,6 +21,10 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 app.use(express.json())
+app.use(express.static(path.resolve('build')));
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
+  });
 app.use('/api/auth',router)
 app.use('/api/user',datarouter)
 app.use('/api/teams',teamrouter)
