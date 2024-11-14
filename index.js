@@ -8,7 +8,10 @@ import teamrouter from './Routes/Teams.js';
 import leavesRouter from './Routes/Leaves.js';
 import boardRouter from './Routes/Board.js';
 import TaskRouter from './Routes/Tasks.js';
-import path from 'path'; 
+// import { fileURLToPath } from 'url';
+// import path from 'path';
+
+ 
 
 dotenv.config()
 const app=express()
@@ -21,10 +24,19 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 app.use(express.json())
-app.use(express.static(path.resolve('build')));
-app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
-  });
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
+
+// // Serve static files from frontend directory
+// app.use(express.static(path.join(__dirname, '../frontend')));
+
+// // Catch-all route to serve index.html directly from frontend folder
+// app.get('*', (req, res) => {
+//   const indexPath = path.join(__dirname, '../frontend', 'index.html');
+//   console.log('Resolved index path:', indexPath); // Debugging the path resolution
+//   res.sendFile(indexPath);
+// });
+  
 app.use('/api/auth',router)
 app.use('/api/user',datarouter)
 app.use('/api/teams',teamrouter)
