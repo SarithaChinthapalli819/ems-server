@@ -266,7 +266,7 @@ router.post('/forgotpassword', async (req, res) => {
             to: `${email}`,
             subject: `Request To Reset Password For Employee Management System..`,
             html: `
-                click <a href="http://localhost:5173/resetpassword">here</a> to reset password. <br/> if this is not you then dont respond to this mail.
+                click <a href="https://ems-frontend-zcdk.onrender.com/resetpassword">here</a> to reset password. <br/> if this is not you then dont respond to this mail.
             `
         };
 
